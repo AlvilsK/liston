@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
+    <meta charset="UTF-8">
     <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= render 'shared/shim' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <div id="wrapper">
         <%= render 'shared/header' %>
       <div class="container">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
         <div class="content">
           <%= yield %>
         </div>
       </div>
         <%= render 'shared/footer' %>
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
   </body>
 </html>
