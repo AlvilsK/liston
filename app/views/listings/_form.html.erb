@@ -1,0 +1,10 @@
+<h1 style="text-align:center;">Add a Listing</h1>
+
+  <div class="form-horizontal">
+    <%= simple_form_for @listing do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.button :submit, class:"form-submit" %>
+  </div>
+<% end %>
