@@ -10,10 +10,12 @@ class ListingsController < ApplicationController
     
     def new
       @listing = current_user.listings.build
+      @categoties = Category.all.map{ |c| [c.name, c.id] }
     end
     
     def create
       @listing = current_user.listings.build(listing_params)
+      @listing.category_id = params[:category_id]
       if @listing.save
         redirect_to listings_path
       else
@@ -40,7 +42,7 @@ class ListingsController < ApplicationController
     private
     
     def listing_params
-      params.require(:listing).permit(:title, :description, :price)
+      params.require(:listing).permit(:title, :description, :price, :category_id)
     end
     
     def find_listing
