@@ -10,14 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-        <%= render 'shared/header' %>
+    <%= render 'shared/header' %>
+    <div class="wrapper"> 
       <div class="container">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
         <div class="content">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
           <%= yield %>
         </div>
       </div>
-        <%= render 'shared/footer' %>
+    </div>   
+    <%= render 'shared/footer' %>
   </body>
 </html>

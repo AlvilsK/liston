@@ -3,15 +3,12 @@
 /* Variables, mixins etc. */
 
 
-
 $gray-medium-light: #eaeaea;
 
 
 /* Global */
 
 html, body {
-	margin: 0;
-	padding: 0;
 	height: 100%;
 }
 
@@ -22,6 +19,11 @@ html, body {
 	position: relative; 
 }
 
+.wrapper {
+     height:auto !important;
+     min-height:100%;
+}
+
 /* Header */
 
 
@@ -30,9 +32,17 @@ html, body {
 /* Footer */
 
 #footer {
-	background: #222222;
-	color: white;
+	background: none;
+	color: black;
+	margin-bottom: 0;
+	padding-bottom: 10px;
 	text-align: center;
+	bottom: 0;
+}
+
+
+#footer a:hover {
+	text-decoration: none;
 }
 
 /* Form */
@@ -45,8 +55,14 @@ html, body {
 	padding: 30px;
 }
 
-.form-submit {
-	text-align: center;
+.form-inputs {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form-actions {
+	float: right;
 }
 
 /* Grid */
