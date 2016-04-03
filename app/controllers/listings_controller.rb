@@ -9,11 +9,11 @@ class ListingsController < ApplicationController
     end
     
     def new
-      @listing = Listing.new
+      @listing = current_user.listings.build
     end
     
     def create
-      @listing = Listing.new(listing_params)
+      @listing = current_user.listings.build(listing_params)
       if @listing.save
         redirect_to listings_path
       else
@@ -22,7 +22,6 @@ class ListingsController < ApplicationController
     end
     
     def edit
-      @listing = Listing.edit
     end
     
     def update
@@ -34,6 +33,8 @@ class ListingsController < ApplicationController
     end
     
     def destroy
+      @listing.destroy
+      redirect_to root_path
     end
     
     private

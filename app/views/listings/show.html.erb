@@ -1,3 +1,10 @@
 <h1><%= @listing.title %></h1>
 <h2><%= @listing.description %></h2>
 <h2><%= @listing.price %></h2>
+
+<% if user_signed_in? %>
+  <% if @listing.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_listing_path, class: "btn btn-default" %>
+    <%= link_to 'Delete', listing_path(@listing), method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' }  %>
+  <% end %>
+<% end %>
