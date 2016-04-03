@@ -1,7 +1,7 @@
 <% @listings.each do |listing| %>
   <div class="row">
     <div class="col-md-1">IMG</div>
-    <div class="col-md-4"><%= listing.title %></div>
+    <div class="col-md-4"><%= link_to listing.title, listing_path(listing) %></div>
     <div class="col-md-2"><%= listing.description %></div>
     <div class="col-md-2">IMG</div>
     <div class="col-md-2">IMG</div>

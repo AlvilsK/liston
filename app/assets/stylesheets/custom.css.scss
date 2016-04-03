@@ -22,59 +22,17 @@ html, body {
 	position: relative; 
 }
 
-#wrapper {
- 	min-height: 100%;
-	position: relative; 
-}
-
 /* Header */
 
-.header {
-	background: #212A3F;
-	height: 50px;
-	position: fixed;
-	width: 100%;
-	margin: 0;
-}
-
-.logo {
-	color: #fa3447;
-	font-weight: 100;
-	font-size: 30px;
-	padding: 0;
-	line-height: 50px;
-}
-
-.menu li a:hover {
-	background-color: transparent;
-	color: #fff;
-}
-
-
-.sell-button {
-  background: #fa3447;
-  color: white;
-  font-weight: bold;
-}
 
 
 
 /* Footer */
 
-.footer {
-    margin: 20px 0px 0px;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    bottom: 0;
-    background: #212A3F;
-    color: white;
-}
-.footer p {
-	text-align:  center;
-}
-.footer p a {
- color: #8AB839;
+#footer {
+	background: #222222;
+	color: white;
+	text-align: center;
 }
 
 /* Form */
@@ -94,10 +52,8 @@ html, body {
 /* Grid */
 
 .col-md-3 {
-	padding: 10% 0 10% 0;
-	border: 1px solid grey;
-}
-
-.row {
+	padding-top: 10px;
+	height: 300px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
