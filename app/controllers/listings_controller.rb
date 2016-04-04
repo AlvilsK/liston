@@ -2,7 +2,12 @@ class ListingsController < ApplicationController
     before_action :find_listing, only: [:show, :edit, :update, :destroy]
     
     def index
-      @listings = Listing.all.order("created_at DESC")
+    	if params[:category].blank?
+			  @listings = Listing.all.order("created_at DESC")
+		  else
+			  @category_id = Category.find_by(name: params[:category]).id
+			  @listings = Listing.where(:category_id => @category_id).order("created_at DESC")
+		end
     end
     
     def show
@@ -10,7 +15,7 @@ class ListingsController < ApplicationController
     
     def new
       @listing = current_user.listings.build
-      @categoties = Category.all.map{ |c| [c.name, c.id] }
+      @categories = Category.all.map{ |c| [c.name, c.id] }
     end
     
     def create
@@ -24,9 +29,11 @@ class ListingsController < ApplicationController
     end
     
     def edit
+      @categories = Category.all.map{ |c| [c.name, c.id] }
     end
     
     def update
+      @listing.category_id = params[:category_id]
       if @listing.update(listing_params)
         redirect_to listing_path(@listing)
       else

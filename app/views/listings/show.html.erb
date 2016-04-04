@@ -1,7 +1,7 @@
 <h1><%= @listing.title %></h1>
 <h2><%= @listing.description %></h2>
 <h2><%= @listing.price %></h2>
-<h2><%= @listing.category.name %></h2>
+<h2>Category: <%= @listing.category.name %></h2>
 
 <% if user_signed_in? %>
   <% if @listing.user_id == current_user.id %>

@@ -2,7 +2,7 @@
   <fieldset>
     <legend>Add a listing</legend>
     <div class="form-inputs">
-      <%= simple_form_for @listing do |f| %>
+      <%= simple_form_for @listing, :html => { :multipart => true } do |f| %>
       <%= select_tag(:category_id, options_for_select(@categoties), :prompt => "Select a category") %>
       <%= f.input :title %>
       <%= f.input :description %>

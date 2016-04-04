@@ -1,2 +1,14 @@
-
-<%= render 'form' %>
+<div class="form-horizontal">
+  <fieldset>
+    <legend>Edit your listing</legend>
+    <div class="form-inputs">
+      <%= simple_form_for @listing, :html => { :multipart => true } do |f| %>
+      <%= f.select :category_id, @categories %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.button :submit, class: "form-actions" %>
+    <% end %>
+    </div>
+  </fieldset>
+</div>
