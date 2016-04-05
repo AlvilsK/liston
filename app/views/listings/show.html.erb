@@ -1,7 +1,8 @@
-<h1><%= @listing.title %></h1>
-<h2><%= @listing.description %></h2>
-<h2><%= @listing.price %></h2>
-<h2>Category: <%= @listing.category.name %></h2>
+<ol class="breadcrumb", style="background: transparent;">
+  <li><%= link_to "Home", root_path %></a></li>
+  <li><a href="#">Library</a></li>
+  <li class="active"><%= @listing.category.name %></li>
+</ol>
 
 <% if user_signed_in? %>
   <% if @listing.user_id == current_user.id %>
@@ -9,3 +10,15 @@
     <%= link_to 'Delete', listing_path(@listing), method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' }  %>
   <% end %>
 <% end %>
+
+
+<div class="col-md-12">
+
+  <div class="thumbnail">
+      <img class="img-responsive" src="http://placehold.it/800x500" alt=""><hr>
+      <div class="caption-full">
+          <h4 class="pull-right"><%= @listing.price %>$</h4>
+          <h1><%= @listing.title %></h1><hr>
+          <p><%= @listing.description %></p>
+      </div>
+  </div>

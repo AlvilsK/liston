@@ -1,7 +1,10 @@
 <% provide(:title, "About") %>
 
+<h1 class="show-category"><%= params[:category] %></h1>
+
 <% Category.all.each do |category| %>
 	<li class="<%= 'active' if params[:category] == category.name %>">
 		<%= link_to category.name, listings_path(category: category.name), class: "link" %>
 	</li>
 <% end %>
+

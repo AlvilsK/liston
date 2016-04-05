@@ -13,15 +13,14 @@ html, body {
 }
 
 .content {
-  margin-top: 70px;
-  margin-bottom: 70px;
-  min-height: 100%;
-	position: relative; 
+  margin-top: 50px;
+  margin-bottom: 50px;
+
 }
 
 .wrapper {
-     height:auto !important;
-     min-height:100%;
+	height:auto !important;
+	min-height:100%;
 }
 
 /* Header */
@@ -67,9 +66,20 @@ html, body {
 
 /* Grid */
 
-.col-md-3 {
-	padding-top: 10px;
-	height: 300px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.portfolio-item {
+    margin-bottom: 25px;
 }
+
+.page-header {
+	text-align: center;
+}
+
+/* Button-Listings */
+
+.btn-primary {
+	float: right;
+	margin-bottom: 1px;
+}
+
+/* Notice, alert */
 
